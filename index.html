@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poultry Tracker App - Flock Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .app-info {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .version-info {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .screenshot {
+            width: 100%;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        .screenshot:hover {
+            transform: scale(1.05);
+        }
+        .download-btn {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 15px 30px;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .download-btn:hover {
+            background: #45a049;
+        }
+        .instructions {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        .instructions ol {
+            text-align: left;
+            margin-left: 20px;
+        }
+        .instructions li {
+            margin-bottom: 8px;
+        }
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 15px 0;
+        }
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 25px;
+            text-decoration: none;
+            color: white;
+            transition: background 0.3s;
+        }
+        .contact-link:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        th {
+            background: rgba(255,255,255,0.1);
+            font-weight: bold;
+        }
+        .privacy-toggle {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        .privacy-toggle:hover {
+            background: #5a6fd8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐣 Poultry Tracker App</h1>
+        
+        <div class="app-info">
+            <h2>Manage Your Flock with Ease</h2>
+            <p>Track your poultry, eggs, vaccinations, and incubating batches all in one place.</p>
+            
+            <div class="version-info">
+                <p><strong>Latest Version:</strong> <span id="currentVersion">Loading...</span></p>
+                <p><strong>Status:</strong> <span id="updateStatus">Checking...</span></p>
+                <p><strong>Release Notes:</strong> <span id="releaseNotes">Loading...</span></p>
+            </div>
+        </div>
+
+        <!-- Download Section -->
+        <div class="app-info">
+            <h3>📱 Download App</h3>
+            <div class="version-info">
+                <p><strong>File Size:</strong> 10 MB</p>
+                <p><strong>Android:</strong> 10 and above</p>
+                <p><strong>Last Updated:</strong> <span id="lastUpdated">Loading...</span></p>
+            </div>
+            
+            <a href="./download/poultry-tracker.apk" class="download-btn" download="PoultryTracker_v1.0.0.apk">
+                ⬇️ Download APK
+            </a>
+
+            <div class="instructions">
+                <h4>Installation Instructions:</h4>
+                <ol>
+                    <li>Tap "Download APK" above</li>
+                    <li>Open the downloaded file</li>
+                    <li>If prompted, enable "Install from unknown sources"</li>
+                    <li>Tap "Install" and wait for completion</li>
+                    <li>Open the app and start tracking your flock!</li>
+                </ol>
+                <p style="font-size: 0.9em; margin-top: 10px;">
+                    <strong>Note:</strong> Your device may warn about installing from outside Play Store. This is normal for direct APK downloads.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Screenshots Section -->
+        <div class="app-info">
+            <h3>📸 App Screenshots</h3>
+            <div class="screenshot-grid">
+                <img src="./images/dashboard.jpg" alt="Dashboard - Track your poultry statistics" class="screenshot" 
+                     onerror="this.style.display='none'">
+                <img src="./images/menu.jpg" alt="Main Menu - Easy navigation" class="screenshot"
+                     onerror="this.style.display='none'">
+                <img src="./images/incubate.jpg" alt="Incubation Tracking - Monitor hatch progress" class="screenshot"
+                     onerror="this.style.display='none'">
+            </div>
+            <p style="text-align: center; margin-top: 10px; font-style: italic;">
+                Tap on any screenshot to view contents better
+            </p>
+        </div>
+        
+        <!-- Features Section -->
+        <div class="app-info">
+            <h3>⭐ Features</h3>
+            <ul>
+                <li>📊 Track poultry counts and categories (chicks, hens, roosters)</li>
+                <li>🥚 Log daily egg production and laying rates</li>
+                <li>💉 Manage vaccination schedules and reminders</li>
+                <li>🐣 Monitor incubating batches and hatch dates</li>
+                <li>📈 Dashboard with insights and analytics</li>
+                <li>☁️ Cloud backup with Firebase</li>
+                <li>📱 Get real time data</li>
+            </ul>
+        </div>
+        
+        <!-- Support Section -->
+        <div class="app-info">
+            <h3>💬 Support</h3>
+            <p>Need help or have questions? Contact our support team:</p>
+            <div class="contact-links">
+                <a href="https://wa.me/254799610782" class="contact-link" target="_blank">
+                    <span style="font-size: 1.2em;">📞</span> WhatsApp
+                </a>
+                <a href="mailto:knightdalepoultry@gmail.com" class="contact-link">
+                    <span style="font-size: 1.2em;">📧</span> Email
+                </a>
+            </div>
+            <p style="text-align: center; margin-top: 10px;">
+                Report bugs or suggest features - we're here to help! 🐛
+            </p>
+        </div>
+        
+        <!-- Privacy Policy Section -->
+        <div class="app-info">
+            <h3>🔒 Privacy & Data Security</h3>
+            <p><strong>Your data is 100% secure and private.</strong> We do not share, sell, or expose your personal information to any third parties.</p>
+            
+            <div class="version-info">
+                <h4>🔐 Our Privacy Promise:</h4>
+                <ul style="text-align: left;">
+                    <li><strong>Email & Passwords:</strong> Stored securely with Authentication - never shared with anyone</li>
+                    <li><strong>Farm Data:</strong> Your poultry records remain private and encrypted</li>
+                    <li><strong>No Data Selling:</strong> We do not sell or rent your personal information to third parties</li>
+                    <li><strong>Data Storage:</strong> Data works on all devices and syncs only to your personal cloud account</li>
+                    <li><strong>Transparency:</strong> We collect minimal data required for app functionality</li>
+                </ul>
+            </div>
+
+            <div style="margin-top: 20px; padding: 15px; background: rgba(76, 175, 80, 0.2); border-radius: 8px;">
+                <h4 style="color: #4CAF50;">✅ What We DON'T Do:</h4>
+                <ul style="text-align: left;">
+                    <li>❌ <strong>Never share</strong> your email with marketers</li>
+                    <li>❌ <strong>Never sell</strong> your farm data to third parties</li>
+                    <li>❌ <strong>Never read</strong> your personal messages or contacts</li>
+                    <li>❌ <strong>Never track</strong> you across other apps or websites</li>
+                    <li>❌ <strong>Never store</strong> passwords in plain text - always encrypted</li>
+                </ul>
+            </div>
+
+            <button class="privacy-toggle" onclick="showFullPrivacy()">View Complete Privacy Policy</button>
+        </div>
+
+        <!-- Full Privacy Policy (hidden by default) -->
+        <div id="privacy-policy-full" class="app-info" style="display: none;">
+            <h3>📄 Complete Privacy Policy</h3>
+            
+            <h4>1. Information We Collect</h4>
+            <p><strong>Personal Information:</strong> When you create an account, we collect your email address for authentication purposes only. This is stored securely.</p>
+            
+            <p><strong>Farm Data:</strong> We store your poultry counts, egg production records, vaccination schedules, and incubating data. This information is stored in your personal database and is only accessible by you.</p>
+            
+            <p><strong>Usage Data:</strong> We may collect anonymous usage statistics to improve app performance and fix bugs. This data cannot be traced back to you personally.</p>
+
+            <h4>2. How We Use Your Information</h4>
+            <ul style="text-align: left;">
+                <li>To provide and maintain the Poultry Tracker App service</li>
+                <li>To authenticate your account and secure your data</li>
+                <li>To sync your data across devices when you're logged in</li>
+                <li>To improve app functionality and user experience</li>
+                <li>To provide customer support when requested</li>
+            </ul>
+
+            <h4>3. Data Security</h4>
+            <p>We implement industry-standard security measures:</p>
+            <ul style="text-align: left;">
+                <li>All data transmission is encrypted using SSL/TLS</li>
+                <li>Passwords are hashed and never stored in plain text</li>
+                <li>Database access is restricted with security rules</li>
+                <li>Regular security updates and monitoring</li>
+            </ul>
+
+            <h4>4. Third-Party Services</h4>
+            <p>We use Google Firebase for authentication and data storage. Firebase complies with global privacy standards and provides enterprise-level security for your data.</p>
+
+            <h4>5. Your Rights</h4>
+            <p>You have the right to:</p>
+            <ul style="text-align: left;">
+                <li>Access all your personal data stored in the app</li>
+                <li>Export your farm data at any time</li>
+                <li>Delete your account and all associated data</li>
+                <li>Opt-out of anonymous usage tracking</li>
+            </ul>
+
+            <h4>6. Data Retention</h4>
+            <p>Your data is retained as long as your account is active. When you delete your account, all personal data and farm records are permanently removed from our servers.</p>
+
+            <h4>7. Contact Us</h4>
+            <p>For privacy-related questions or to exercise your rights, contact us at:</p>
+            <div class="contact-links">
+                <a href="https://wa.me/254799610782" class="contact-link" target="_blank">
+                    <span style="font-size: 1.2em;">📞</span> WhatsApp
+                </a>
+                <a href="mailto:knightdalepoultry@gmail.com" class="contact-link">
+                    <span style="font-size: 1.2em;">📧</span> Email
+                </a>
+            </div>
+
+            <p style="margin-top: 20px; font-size: 0.9em; text-align: center;">
+                <em>Last Updated: October 22, 2025</em>
+            </p>
+
+            <button class="privacy-toggle" onclick="hideFullPrivacy()">Close Full Policy</button>
+        </div>
+    </div>
+
+    <script>
+        // Fetch and display version info from version.json
+        fetch('./version.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Version data loaded:', data);
+                
+                // Update version information
+                document.getElementById('currentVersion').textContent = data.version;
+                document.getElementById('releaseNotes').textContent = data.release_notes || 'Bug fixes and performance improvements';
+                document.getElementById('lastUpdated').textContent = new Date(data.timestamp).toLocaleDateString();
+                
+                // Update download link with version-specific filename
+                const downloadLink = document.querySelector('.download-btn');
+                downloadLink.href = data.url;
+                downloadLink.download = `PoultryTracker_v${data.version}.apk`;
+                downloadLink.textContent = `⬇️ Download v${data.version}`;
+                
+                // Show appropriate status
+                if (data.mandatory) {
+                    document.getElementById('updateStatus').textContent = '🔄 Mandatory Update Required';
+                    document.getElementById('updateStatus').style.color = '#ff6b6b';
+                } else {
+                    document.getElementById('updateStatus').textContent = '✅ Latest Version Available';
+                    document.getElementById('updateStatus').style.color = '#51cf66';
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching version:', error);
+                // Fallback values
+                document.getElementById('currentVersion').textContent = '1.0.0';
+                document.getElementById('updateStatus').textContent = '⚠️ Check updates in app';
+                document.getElementById('updateStatus').style.color = '#ffcc00';
+                document.getElementById('releaseNotes').textContent = 'Initial release with flock tracking';
+                document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString();
+            });
+
+        // Screenshot modal functionality
+        document.querySelectorAll('.screenshot').forEach(img => {
+            img.addEventListener('click', () => {
+                const modal = document.createElement('div');
+                modal.style.position = 'fixed';
+                modal.style.top = '0';
+                modal.style.left = '0';
+                modal.style.width = '100%';
+                modal.style.height = '100%';
+                modal.style.backgroundColor = 'rgba(0,0,0,0.9)';
+                modal.style.display = 'flex';
+                modal.style.justifyContent = 'center';
+                modal.style.alignItems = 'center';
+                modal.style.zIndex = '1000';
+                modal.style.cursor = 'pointer';
+                
+                const modalImg = document.createElement('img');
+                modalImg.src = img.src;
+                modalImg.alt = img.alt;
+                modalImg.style.maxWidth = '90%';
+                modalImg.style.maxHeight = '90%';
+                modalImg.style.borderRadius = '12px';
+                modalImg.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+                
+                modal.appendChild(modalImg);
+                modal.addEventListener('click', () => document.body.removeChild(modal));
+                document.body.appendChild(modal);
+            });
+        });
+
+        // Privacy Policy Toggle Functions
+        function showFullPrivacy() {
+            document.getElementById('privacy-policy-full').style.display = 'block';
+            document.getElementById('privacy-policy-full').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function hideFullPrivacy() {
+            document.getElementById('privacy-policy-full').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
