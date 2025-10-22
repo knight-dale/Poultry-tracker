@@ -1,7 +1,7 @@
 {
-  "version": "1.1.0",
+  "version": "1.0.0",
   "url": "https://poultry-tracker.netlify.app/download/poultry-tracker.apk",
   "mandatory": false,
-  "release_notes": "Test update - New features and improvements",
+  "release_notes": "New features and improvements",
   "timestamp": "2024-01-20T10:30:00Z"
 }
