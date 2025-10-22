@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "url": "./download/poultry-tracker.apk",
   "mandatory": false,
   "release_notes": "Initial release with complete flock management: track poultry counts, egg production, vaccination schedules, and incubating batches. Includes offline functionality and cloud backup.",
