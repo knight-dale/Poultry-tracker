@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "1.2.1",
   "url": "https://poultry-tracker.netlify.app/download/poultry-tracker.apk",
   "mandatory": true,
   "release_notes": "🚀 NEW FEATURES:\n• Enhanced Device Management - View logged-in devices and remote logout\n• Feedback System - Share suggestions to improve the app\n• Interactive Tutorial - Step-by-step guided tours\n• Secure AI Chatbot - Encrypted farming advice assistant\n• Live Weather Integration - Real-time location-based weather data\n• Google Sign-in - Quick and secure authentication\n\n✨ IMPROVEMENTS:\n• Report generation and download\n• Improved egg data handling (latest entry overwrites previous same-day data)\n• Enhanced functionality and bug fixes",
