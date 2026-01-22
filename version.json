@@ -1,7 +1,7 @@
 {
-  "version": "1.2.1",
+  "version": "1.2.3",
   "url": "https://poultry-tracker.netlify.app/download/poultry-tracker.apk",
   "mandatory": true,
-  "release_notes": "🚀 VERSION 1.2.2 UPDATE:\n• 🤖 Fixed AI Chatbot - Resolved connection issues for smoother farming advice.\n• 🔑 Added Google Sign-In - Quick, one-tap secure access to your farm data.\n• 🛠️ General performance tweaks and stability improvements.",
+  "release_notes": "🚀 VERSION 1.2.3 UPDATE:\n• 🤖 Fixed AI Chatbot - Resolved connection issues for smoother farming advice.\n• 🛠️ General performance tweaks and stability improvements.",
   "timestamp": "2026-01-18T23:23:00Z"
 }
