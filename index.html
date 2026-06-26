@@ -4,65 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poultry Tracker App - Flock Management</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐣</text></svg>">
 </head>
 <body>
-    <nav class="main-nav">
+    <div class="page-loader" id="pageLoader">🐣</div>
+
+    <nav class="main-nav" id="mainNav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo"><span>🐣</span> Poultry Tracker</a>
-            <div class="nav-links">
+            <div class="nav-links" id="navLinks">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#download" class="nav-link">Download</a>
                 <a href="#screenshots" class="nav-link">Screenshots</a>
                 <a href="#features" class="nav-link">Features</a>
                 <a href="privacy.html" class="nav-link">Privacy</a>
+                <a href="delete.html" class="nav-link">Delete Account</a>
             </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
         </div>
     </nav>
 
     <section class="hero" id="home">
         <div class="hero-container">
             <div class="hero-content">
-                <span class="badge">Welcome to the Future of Farming 🌿</span>
-                <h1 class="hero-title">Your Farm’s Best Friend is <span>Finally Here.</span></h1>
-                
+                <span class="badge">Built for the field 🌾</span>
+                <h1 class="hero-title">Run Your Flock Like a Pro, <span>From Your Pocket.</span></h1>
+
                 <p class="hero-subtitle">
-                    Hello there! Whether you're tending to a backyard flock or managing a full-scale poultry farm, we're here to make your day easier. 
-                    Say goodbye to messy notebooks and hello to a smarter way of tracking your journey.
+                    Whether you're raising a backyard flock or running a full-scale poultry farm, Poultry Tracker
+                    keeps your records straight and your business growing. No notebooks, no guesswork.
                 </p>
 
                 <div class="hero-features-mini">
-                    <p>✅ <strong>Track:</strong> Poultry, eggs, and vaccinations.</p>
-                    <p>✅ <strong>Offline:</strong> Works perfectly in remote farms.</p>
-                    <p>✅ <strong>Marketplace:</strong> Buy/Sell and chat with local farmers.</p>
+                    <p>🐔 <strong>Track:</strong> Poultry, eggs, and vaccinations.</p>
+                    <p>📶 <strong>Offline:</strong> Works perfectly in remote farms.</p>
+                    <p>🏪 <strong>Marketplace:</strong> Buy, sell, and chat with local farmers.</p>
                 </div>
 
-                <div style="margin-top: 30px;">
+                <div>
                     <a href="https://play.google.com/store/apps/details?id=com.knightdale.poultrytracker" class="download-btn">
-                        <span>🚀 Get on Google Play</span>
+                        <span>Get on Google Play</span>
                     </a>
-                    <p style="font-size: 0.8rem; color: var(--text-dim); margin-top: 10px; margin-left: 5px;">
-                        Join farmers already digitizing their success.
+                    <p style="font-size: 0.85rem; color: var(--soil-soft); margin-top: 12px; margin-left: 5px;">
+                        Join farmers already digitizing their flock records.
                     </p>
                 </div>
             </div>
-            
+
             <div class="hero-mockup">
                 <div class="mockup-wrapper">
                     <img src="images/menu.jpeg" alt="App Mockup">
+                    <div class="floating-stat">
+                        <span style="font-size: 1.4rem;">🥚</span>
+                        <div>
+                            <div style="font-weight: 700; font-size: 0.95rem;">Daily Egg Log</div>
+                            <div style="font-size: 0.8rem; color: var(--soil-soft);">Tracked automatically</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <div class="section-divider"></div>
+
     <div class="section">
-        <h2>Latest Version Info</h2>
+        <h2>Latest Version</h2>
         <div class="version-card" id="version">
             <p><strong>Version:</strong> <span id="versionNumber">Loading...</span></p>
             <p><strong>Status:</strong> <span id="updateStatus">Checking...</span></p>
             <p><strong>Release Date:</strong> <span id="releaseDate">Loading...</span></p>
-            <div style="margin-top: 15px; padding: 15px; background: var(--bg-main); border-radius: 10px;">
+            <div style="margin-top: 15px; padding: 15px; background: var(--bg-main); border-radius: 12px;">
                 <strong>What's New:</strong>
                 <div id="releaseNotes"></div>
             </div>
@@ -70,18 +84,21 @@
     </div>
 
     <section class="section" id="download">
-        <h2>📱 Download App</h2>
+        <h2>📱 Download the App</h2>
         <div class="version-card">
             <p><strong>Android:</strong> 10 and above</p>
             <p><strong>Last Updated:</strong> <span id="lastUpdated">Loading...</span></p>
         </div>
         <a href="https://play.google.com/store/apps/details?id=com.knightdale.poultrytracker" class="download-btn" style="margin: 20px 0;">
-            <span>⬇️ Install via Play Store</span>
+            <span>Install via Play Store</span>
         </a>
     </section>
 
+    <div class="section-divider"></div>
+
     <section class="section" id="screenshots">
-        <h2 style="margin-bottom: 30px;">📸 App Gallery</h2>
+        <h2 style="margin-bottom: 8px;">📸 App Gallery</h2>
+        <p style="color: var(--soil-soft); margin-bottom: 30px;">A look at the tools in your pocket.</p>
         <div class="screenshot-grid">
             <div class="screenshot-item"><img src="images/menu.jpeg"><div class="screenshot-caption">Main Dashboard</div></div>
             <div class="screenshot-item"><img src="images/chatbot.jpeg"><div class="screenshot-caption">AI Assistant</div></div>
@@ -95,8 +112,11 @@
         </div>
     </section>
 
+    <div class="section-divider"></div>
+
     <section class="section" id="features">
-        <h2 style="margin-bottom: 30px;">⭐ Features</h2>
+        <h2 style="margin-bottom: 8px;">⭐ Why Farmers Choose Us</h2>
+        <p style="color: var(--soil-soft); margin-bottom: 30px;">Everything you need, nothing you don't.</p>
         <div class="features-grid">
             <div class="feature-card"><h3>📶 Offline Ready</h3><p>Manage your farm without needing constant internet.</p></div>
             <div class="feature-card"><h3>🏪 Marketplace</h3><p>Buy, sell, and trade poultry products in your region.</p></div>
@@ -109,13 +129,19 @@
     </section>
 
     <footer>
-        <p>🐣 Poultry Tracker App - Made for Farmers by Farmers</p>
+        <p class="footer-tagline">🐣 Poultry Tracker</p>
+        <p>Made for farmers, by farmers.</p>
+        <div class="footer-stamp">Trusted on the farm since 2026</div>
         <div class="contact-links">
             <a href="https://wa.me/254799610782" class="contact-link">WhatsApp</a>
             <a href="mailto:jonahjjed@gmail.com" class="contact-link">Email Support</a>
+            <a href="privacy.html" class="contact-link">Privacy & Terms</a>
+            <a href="delete-account.html" class="contact-link">Delete Account</a>
         </div>
-        <p style="margin-top: 20px; font-size: 0.8rem; color: var(--text-dim);">&copy; 2026 Poultry Tracker App. All rights reserved.</p>
+        <p class="footer-copy">&copy; 2026 Poultry Tracker App. All rights reserved.</p>
     </footer>
+
+    <button class="back-to-top" id="backToTop">↑</button>
 
     <script src="./js/app.js"></script>
 </body>
